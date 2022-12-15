@@ -1,0 +1,92 @@
+{
+	"info": {
+		"_postman_id": "12f4f8cd-e024-4385-9912-f8ecac3560c6",
+		"name": "Glints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24464263"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let jsonData = pm.response.json();",
+							"postman.setEnvironmentVariable('access_token', jsonData.data.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"grant_type\": \"password\",\n    \"client_id\": \"2f58c66702c29b821efec58b84e1aa84ee2d2a03a3bd2df8aea61fcd5e5ca50d\",\n    \"username\": \"burgerbros@handmadeburgers.ph\",\n    \"password\": \"test123\"\n}"
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/oauth2/token",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"oauth2",
+						"token"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "My Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoiMjAyMi0xMS0yMVQxNDowMjo1Ni43ODlaIiwiaWF0IjoxNjY5MDM5Mzc2LCJleHAiOjE2Njk2NDQxNzYsImF1ZCI6IjJmNThjNjY3MDJjMjliODIxZWZlYzU4Yjg0ZTFhYTg0ZWUyZDJhMDNhM2JkMmRmOGFlYTYxZmNkNWU1Y2E1MGQiLCJpc3MiOiJnbGludHMiLCJzdWIiOiIxYmNhOWM3MS00Mzc3LTQ2OGMtODk2MC1hMzI1NWQ4NTQ5NDYifQ.7l3ZKcdLEtVp0aryfqXyJYhn_G5Bn3CpmTjWwC5QI6U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/me?include=Companies,+Group,+PendingUserCompanies",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"me"
+					],
+					"query": [
+						{
+							"key": "include",
+							"value": "Companies,+Group,+PendingUserCompanies"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
