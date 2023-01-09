@@ -26,7 +26,7 @@ public class pageBoard {
 
 
     By btnAddNewCard = By.xpath("(//android.widget.Button[@content-desc='Add new card'])");
-    By inputCardName = By.xpath("//android.view.View[@content-desc='Private Card]/android.widget.EditText");
+    By inputCardName = By.xpath("//android.view.View[@content-desc='Private Card']/android.widget.EditText");
     By tickOnCard = By.xpath("//android.view.View[@content-desc='Private Card']/android.widget.EditText/android.view.View");
     public By getBtnAddNewCard() {
         return btnAddNewCard;

@@ -25,11 +25,14 @@ public class board extends env {
         wait.until(
                 ExpectedConditions.visibilityOfElementLocated(elementBoard.getPageDropdownBoard())
         );
-        driver.findElement(elementBoard.getPageDropdownBoard()).click();
-        Thread.sleep(2000);
+//        driver.findElement(elementBoard.getPageDropdownBoard()).click();
+//        Thread.sleep(2000);
     }
     @When("user click Add New List")
     public void user_click_add_new_list() {
+        wait.until(
+                ExpectedConditions.visibilityOfElementLocated(elementBoard.getBtnAddList())
+        );
         driver.findElement(elementBoard.getBtnAddList()).click();
     }
     @When("user input Board Name")

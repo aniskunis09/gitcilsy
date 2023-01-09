@@ -8,7 +8,7 @@ Feature: Board Menu
     Then user is on Current Team Page
     When user click Board Menu button
     Then user is on Current Board Page
-    When user click Board Menu button
+#    When user click Board Menu button
     And user click Add New List
     And user input Board Name
     And user click Submit button
