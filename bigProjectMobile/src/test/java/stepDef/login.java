@@ -13,6 +13,9 @@ public class login extends env {
         );
     }
     public void user_click_skip_button() {
+        wait.until(
+                ExpectedConditions.visibilityOfElementLocated(elementLogin.getBtnSkip())
+        );
         driver.findElement(elementLogin.getBtnSkip()).click();
     }
     public void user_click_sign_in_button() {

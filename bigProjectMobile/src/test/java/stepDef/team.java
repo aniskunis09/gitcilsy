@@ -48,6 +48,9 @@ public class team extends env {
 
     @When("user click Board Menu button")
     public void user_click_board_menu_button() {
+        wait.until(
+                ExpectedConditions.visibilityOfElementLocated(elementTeam.getBtnBoardMenu())
+        );
         driver.findElement(elementTeam.getBtnBoardMenu()).click();
     }
 }

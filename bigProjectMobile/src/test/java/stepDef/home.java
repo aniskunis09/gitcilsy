@@ -9,12 +9,12 @@ import objectRepository.pageHome;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.net.MalformedURLException;
 
-public class home extends hooks {
+public class home extends env {
     pageHome elementHome = new pageHome();
 
     @Given("user is on Home page")
     public void user_is_on_home_page() throws MalformedURLException {
-        before();
+//        before();
         wait.until(
                 ExpectedConditions.visibilityOfElementLocated(elementHome.getPageHome())
         );

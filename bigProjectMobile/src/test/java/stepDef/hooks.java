@@ -2,8 +2,8 @@ package stepDef;
 
 import config.env;
 import io.appium.java_client.android.AndroidDriver;
-import org.junit.After;
-import org.junit.Before;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -16,10 +16,10 @@ public class hooks extends env {
     @Before
     public void before() throws MalformedURLException {
         capabilities = new DesiredCapabilities();
-        capabilities.setCapability("deviceName", "Pixel 4 API 30");
+        capabilities.setCapability("deviceName", "Pixel_3a_API_32_arm64-v8a");
         capabilities.setCapability("udid", "emulator-5554");
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("platformVersion", "11");
+        capabilities.setCapability("platformVersion", "12");
 //        capabilities.setCapability("app", "src/test/resources/apk/cicle-staging.apk");
         capabilities.setCapability("appPackage", appPackage);
         capabilities.setCapability("appActivity", "staging.cicle.MainActivity");
